@@ -1,0 +1,15 @@
+{
+  "name": "maven-semver",
+  "description": "A semantic version parser for maven, based on the API of npm's semver",
+  "main": "index.js",
+  "directories": {
+    "test": "ava --verbose"
+  },
+  "scripts": {
+    "test": "ava"
+  },
+  "author": "Dror Ben-Gai <dror@snyk.io>",
+  "devDependencies": {
+    "ava": "^0.17.0"
+  }
+}
