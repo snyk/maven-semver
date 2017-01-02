@@ -7,8 +7,8 @@ import { valid } from '../../';
 test('valid(v)', t => {
   t.is(valid(null), '');
   t.is(valid(''), '');
-  t.is(valid('.'),'');
-  t.is(valid('.-.'),'');
+  t.is(valid('.'), '');
+  t.is(valid('.-.'), '');
 
   t.is(valid('nonsense'), 'nonsense');
 
