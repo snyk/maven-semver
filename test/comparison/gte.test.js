@@ -19,6 +19,7 @@ test('gte(v1, v2): v1 >= v2', t => {
   t.truthy(gte('5.0.1.52.200', '5.0.1.52.200'));
   t.truthy(gte('5.0.1-beta.3', '5.0.1-beta.3'));
   t.truthy(gte('5.0.1-beta', '5.0.1-beta'));
+  t.truthy(gte('5.0.1', 'nonsense'));
 
   t.falsy(gte('1', '2'));
   t.falsy(gte('5.3', '5.4'));

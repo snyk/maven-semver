@@ -2,14 +2,14 @@
   "name": "maven-semver",
   "description": "A semantic version parser for maven, based on the API of npm's semver",
   "main": "index.js",
-  "directories": {
-    "test": "ava --verbose"
-  },
   "scripts": {
-    "test": "ava"
+    "lint": "jscs lib/*.js && jshint lib/*.js",
+    "test": "npm run lint && ava --verbose"
   },
   "author": "Dror Ben-Gai <dror@snyk.io>",
   "devDependencies": {
-    "ava": "^0.17.0"
+    "ava": "^0.17.0",
+    "jscs": "^3.0.7",
+    "jshint": "^2.9.4"
   }
 }
