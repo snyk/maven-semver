@@ -1,15 +1,28 @@
 {
-  "name": "maven-semver",
+  "name": "@snyk/maven-semver",
   "description": "A semantic version parser for maven, based on the API of npm's semver",
   "main": "index.js",
   "scripts": {
     "lint": "jscs lib/*.js && jshint lib/*.js",
-    "test": "npm run lint && ava --verbose"
+    "test": "npm run lint && ava --verbose",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "author": "Dror Ben-Gai <dror@snyk.io>",
   "devDependencies": {
     "ava": "^0.17.0",
     "jscs": "^3.0.7",
-    "jshint": "^2.9.4"
+    "jshint": "^2.9.4",
+    "semantic-release": "^6.3.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Snyk/maven-semver"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "version": "0.0.0-development",
+  "publishConfig": {
+    "access": "restricted"
   }
 }
