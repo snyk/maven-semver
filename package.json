@@ -8,6 +8,7 @@
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "author": "Dror Ben-Gai <dror@snyk.io>",
+  "license": "Apache-2.0",
   "devDependencies": {
     "ava": "^0.17.0",
     "jscs": "^3.0.7",
@@ -19,9 +20,8 @@
     "url": "https://github.com/Snyk/maven-semver"
   },
   "engines": {
-    "node": ">=4"
+    "node": ">=6"
   },
-  "version": "0.0.0-development",
   "publishConfig": {
     "access": "restricted"
   }
