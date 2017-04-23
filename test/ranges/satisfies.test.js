@@ -16,6 +16,14 @@ test('satisfies(version, range)', t => {
   t.false(satisfies('4.2.1', '[2.0.0,3)'));
   t.false(satisfies('4.2.1', '[2.0.0,3),[3.0.0.RELEASE,3.1),[3.1.0.RELEASE,3.2)'));
   t.false(satisfies('4.2.1.RELEASE', '(4.1.0.RELEASE,4.2.0.RELEASE)'));
+
+  t.false(satisfies('4.0.9.RELEASE', '[,2.5.6.SEC03)'));
+  t.false(satisfies('4.0.9.RELEASE', '[,2.5.6.REC03)'));
+  t.false(satisfies('4.0.9.RELEASE', '[2.5.7,2.5.7.SR023)'));
+  t.false(satisfies('4.0.9.RELEASE', '[3,3.0.6)'));
+
+  t.false(satisfies('4.0.9.RELEASE', '[,2.5.6.SEC03), [2.5.7,2.5.7.SR023), [3,3.0.6)'));
+
   // oddly enough, this is correct:
   t.true(satisfies('1.2.1', 'nonsense'));
 
