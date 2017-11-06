@@ -21,4 +21,15 @@ test('prerelease(v)', t => {
   t.is(prerelease(''), null);
   t.is(prerelease(), null);
   t.is(prerelease(null), null);
+
+  t.is(prerelease('1.2.3.Final'), null);
+  t.is(prerelease('1.2.3-Final'), null);
+  t.is(prerelease('1.2.3.GA'), null);
+  t.is(prerelease('1.2.3-GA'), null);
+  t.is(prerelease('1.2.3.RELEASE'), null);
+  t.is(prerelease('1.2.3-RELEASE'), null);
+  t.deepEqual(prerelease('1.2.3.RELEASE-1'), [1]);
+  t.deepEqual(prerelease('1.2.3.RELEASE1'), [1]);
+  t.is(prerelease('1.2.3.FINAL-RELEASE'), null);
+  
 });
