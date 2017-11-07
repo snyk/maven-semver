@@ -10,14 +10,14 @@
   "author": "Dror Ben-Gai <dror@snyk.io>",
   "license": "Apache-2.0",
   "devDependencies": {
-    "ava": "^0.17.0",
+    "ava": "^0.23.0",
     "jscs": "^3.0.7",
-    "jshint": "^2.9.4",
-    "semantic-release": "^6.3.2"
+    "jshint": "^2.9.5",
+    "semantic-release": "^8.2.0"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Snyk/maven-semver"
+    "url": "https://github.com/snyk/maven-semver"
   },
   "engines": {
     "node": ">=6"
