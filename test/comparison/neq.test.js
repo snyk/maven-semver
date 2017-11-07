@@ -10,6 +10,7 @@ test('neq(v1, v2): v1 != v2', t => {
   t.truthy(neq('5.0.1.52.200', '5.0.1.52.176'));
   t.truthy(neq('5.0.1-beta.3', '5.0.1-beta.1'));
   t.truthy(neq('5.0.1-beta', '5.0.1-alpha'));
+  t.truthy(neq('5.0.1-ga', '5.0.1-alpha'));
 
   t.falsy(neq('2', '2'));
   t.falsy(neq('2', '2.0'));
@@ -21,4 +22,6 @@ test('neq(v1, v2): v1 != v2', t => {
   t.falsy(neq('5.0.1.52.200', '5.0.1.52.200'));
   t.falsy(neq('5.0.1-beta.3', '5.0.1-beta.3'));
   t.falsy(neq('5.0.1-beta', '5.0.1-beta'));
+  t.falsy(neq('5.0.1-beta', '5.0.1.beta'));
+  t.falsy(neq('5.0.1-ga', '5.0.1-release'));
 });

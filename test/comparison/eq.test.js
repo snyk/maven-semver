@@ -13,6 +13,10 @@ test('eq(v1, v2): v1 == v2', t => {
   t.truthy(eq('5.0.1.52.200', '5.0.1.52.200'));
   t.truthy(eq('5.0.1-beta.3', '5.0.1-beta.3'));
   t.truthy(eq('5.0.1-beta', '5.0.1-beta'));
+  t.truthy(eq('5.0.1-beta', '5.0.1.beta'));
+  t.truthy(eq('5.0.1.Final', '5.0.1'));
+  t.truthy(eq('5.0.1.1-GA', '5.0.1.1'));
+  t.truthy(eq('5.0.1', '5.0.1'));
 
   t.falsy(eq('2', '1'));
   t.falsy(eq('5.4', '5.3'));
@@ -21,4 +25,7 @@ test('eq(v1, v2): v1 == v2', t => {
   t.falsy(eq('5.0.1.52.200', '5.0.1.52.176'));
   t.falsy(eq('5.0.1-beta.3', '5.0.1-beta.1'));
   t.falsy(eq('5.0.1-beta', '5.0.1-alpha'));
+  t.falsy(eq('5.0.1.Final', '5.0.1.a'));
+  t.falsy(eq('5.0.1.1-GA', '5.0.1-a'));
+  t.falsy(eq('5.0.1', '5.0.1.a'));
 });
