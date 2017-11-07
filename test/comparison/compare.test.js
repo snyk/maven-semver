@@ -22,6 +22,7 @@ test('compare(v1, v2): 1 if v1 > v2', t => {
   t.is(compare('1.2', '1.1'), 1);
   t.is(compare('1.1.1', '1.1.0'), 1);
   t.is(compare('1.1.0.2', '1.1.0.1'), 1);
+  t.is(compare('1.1.1', '1.1.1.beta'), 1);
   t.is(compare('1.1.0.1-beta', '1.1.0.1-alpha'), 1);
   t.is(compare('1.1.0.1-alpha.3', '1.1.0.1-alpha.2'), 1);
   t.is(compare('1.1.1.Final', '1.1.0'), 1);

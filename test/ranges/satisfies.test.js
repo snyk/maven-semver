@@ -28,8 +28,9 @@ test('satisfies(version, range)', t => {
 
   t.false(satisfies(
     '4.0.9.RELEASE', '[,2.5.6.SEC03), [2.5.7,2.5.7.SR023), [3,3.0.6)'));
-  // TODO: this is a bug, should be true as 'alpha' < ''
-  t.false(satisfies('4.3.0.alpha', '[4.1.0,4.3.0]'));
+  t.true(satisfies('4.3.0.alpha', '[4.1.0,4.3.0]'));
+  t.true(satisfies('4.1.0.Final', '[4.1.0,4.3.0]'));
+  t.false(satisfies('4.1.0.beta', '[4.1.0,4.3.0]'));
 
   t.true(satisfies('4.3.0.GA', '[4.1.0,4.3.0]'));
   t.true(satisfies('4.3.0.Final', '[4.1.0,4.3.0]'));
