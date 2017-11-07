@@ -10,7 +10,7 @@ test('validRange(range)', t => {
   t.is(r1._components[0].minOperand, '1.1');
 
   const r2 = parseRange('1.2');
-  t.is(r2._components[0].minOperator, '>=');
+  t.is(r2._components[0].minOperator, '==');
   t.is(r2._components[0].minOperand, '1.2');
 
   const r3 = parseRange('[1.3]');
