@@ -10,7 +10,7 @@ test('gte(v1, v2): v1 >= v2', t => {
   t.truthy(gte('5.0.1.52.200', '5.0.1.52.176'));
   t.truthy(gte('5.0.1-beta.3', '5.0.1-beta.1'));
   t.truthy(gte('5.0.1-beta', '5.0.1-alpha'));
-  t.truthy(gte('5.0.1.beta', '5.0.1')); //TODO: bug
+  t.truthy(gte('5.0.1', '5.0.1.beta'));
   t.truthy(gte('5.0.1.RELEASE', '5.0.1'));
   t.truthy(gte('5.0.2.RELEASE', '5.0.1'));
 
@@ -30,6 +30,6 @@ test('gte(v1, v2): v1 >= v2', t => {
   t.falsy(gte('5.0.1.52.176', '5.0.1.52.200'));
   t.falsy(gte('5.0.1-beta.1', '5.0.1-beta.3'));
   t.falsy(gte('5.0.1-alpha', '5.0.1-beta'));
-  t.falsy(gte('5.0.1', '5.0.1.beta')); //TODO: bug
+  t.falsy(gte('5.0.1.beta', '5.0.1'));
   t.falsy(gte('5.3.GA', '5.4'));
 });

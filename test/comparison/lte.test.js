@@ -10,7 +10,7 @@ test('lte(v1, v2): v1 <= v2', t => {
   t.truthy(lte('5.0.1.52.176', '5.0.1.52.200'));
   t.truthy(lte('5.0.1-beta.1', '5.0.1-beta.3'));
   t.truthy(lte('5.0.1-alpha', '5.0.1-beta'));
-  t.truthy(lte('5.0.1', '5.0.1.beta')); //TODO: bug
+  t.truthy(lte('5.0.1.beta', '5.0.1')); 
   t.truthy(lte('5.0.1.GA', '5.0.2.beta'));
 
   t.truthy(lte('2', '2'));
@@ -28,5 +28,5 @@ test('lte(v1, v2): v1 <= v2', t => {
   t.falsy(lte('5.0.1.52.200', '5.0.1.52.176'));
   t.falsy(lte('5.0.1-beta.3', '5.0.1-beta.1'));
   t.falsy(lte('5.0.1-beta', '5.0.1-alpha'));
-  t.falsy(lte('5.0.1.beta', '5.0.1')); //TODO: bug
+  t.falsy(lte('5.0.1', '5.0.1.rc'));
 });
