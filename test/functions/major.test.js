@@ -15,4 +15,5 @@ test('major(v)', t => {
   t.is(major('1.2.3.ga.4'), 1);
   t.is(major('.1'), 0);
   t.is(major('.1.1'), 0);
+  t.is(major('FINAL'), 0);
 });
