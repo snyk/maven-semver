@@ -31,5 +31,12 @@ test('prerelease(v)', t => {
   t.deepEqual(prerelease('1.2.3.RELEASE-1'), [1]);
   t.deepEqual(prerelease('1.2.3.RELEASE1'), [1]);
   t.is(prerelease('1.2.3.FINAL-RELEASE'), null);
-  
+
+  t.is(prerelease('1.2.3.SEC'), null);
+  t.is(prerelease('1.2.3.SEC01'), null);
+  t.deepEqual(prerelease('1.2.3.NONO-SEC01'), ['nono', 'sec', 1]);
+  // TODO: these are not really "correct",
+  //   but it's a vey edgy case - worth to handle?
+  t.is(prerelease('1.2.3.SEC-ALPHA'), null);
+  t.is(prerelease('1.2.3.SEC01-ALPHA'), null);
 });
