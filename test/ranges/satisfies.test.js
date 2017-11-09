@@ -103,4 +103,11 @@ test('satisfies(version, range) - security', t => {
   t.false(satisfies(
     '4.0.9.RELEASE',
     '[,2.5.6.SEC03), [2.5.7,2.5.7.SR023), [3,3.0.6)'));
+  t.true(satisfies('2.5', '[2.5,2.5.6.SEC02)'));
+  t.true(satisfies('2.5.6.SEC01', '[2.5,2.5.6.SEC02)'));
+  t.false(satisfies('2.5.6.SEC02', '[2.5,2.5.6.SEC02)'));
+  t.false(satisfies('2.5.6.SECURITY01', '[2.5,2.5.6.SEC02)'));
+  t.false(satisfies('2.5-SNAPSHOT', '[2.5,2.5.6.SEC02)'));
+  t.true(satisfies('2.5-SNAPSHOT', '[2.5-alpha,2.5.6.SEC02)'));
+  t.true(satisfies('2.5.6-SNAPSHOT', '[2.5,2.5.6.SEC02)'));
 });
