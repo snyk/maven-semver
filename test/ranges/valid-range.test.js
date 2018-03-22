@@ -52,7 +52,19 @@ test('validRange(range)', t => {
   t.is(validRange(['1.0]']), null);
 
   t.is(validRange('(,1.4'), null);
+  t.is(validRange(']1.5['), null);
+  t.is(validRange('[[1.5]'), null);
+  t.is(validRange('[1.5]]]'), null);
+  t.is(validRange('),1.4('), null);
+  t.is(validRange('>=5'), null);
+  t.is(validRange('>5'), null);
+  t.is(validRange('<=5'), null);
+  t.is(validRange('<5'), null);
+  t.is(validRange('=5'), null);
   // t.is(validRange('[1]||[2]'), null);
   // t.is(validRange('[1][2]'), null);
   // t.is(validRange('[>1,<1) ?'), null);
+
+  // not yet supported (checking that brackets make sense)
+  // t.is(validRange('[]1[]'), null);
 });
