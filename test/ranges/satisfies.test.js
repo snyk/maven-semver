@@ -111,3 +111,8 @@ test('satisfies(version, range) - security', t => {
   t.true(satisfies('2.5-SNAPSHOT', '[2.5-alpha,2.5.6.SEC02)'));
   t.true(satisfies('2.5.6-SNAPSHOT', '[2.5,2.5.6.SEC02)'));
 });
+
+test('satisfies(version, range) - google', t => {
+  t.false(satisfies('1.1.1-jre', '[,1.1.1)'));
+  t.false(satisfies('1.1.1-android', '[,1.1.1)'));
+});
