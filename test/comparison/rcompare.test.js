@@ -15,6 +15,7 @@ test('rcompare(v1, v2): 0 if v1 == v2', t => {
   t.is(rcompare('1.1.0.Final', '1.1.0'), 0);
   t.is(rcompare('1.1.0-GA', '1.1.0'), 0);
   t.is(rcompare('1.1.0.RELEASE', '1.1.0'), 0);
+  t.is(rcompare('1.1.0-jre', '1.1.0'), 0);
 });
 
 test('rcompare(v1, v2): -1 if v1 > v2', t => {
@@ -27,6 +28,7 @@ test('rcompare(v1, v2): -1 if v1 > v2', t => {
   t.is(rcompare('1.1.1.Final', '1.1.0'), -1);
   t.is(rcompare('1.1.0.1-GA', '1.1.0.beta'), -1);
   t.is(rcompare('1.1.1.RELEASE', '1.1.0'), -1);
+  t.is(rcompare('1.1.1-jre', '1.1.0'), -1);
 });
 
 test('rcompare(v1, v2): 1 if v1 < v2', t => {
@@ -39,4 +41,5 @@ test('rcompare(v1, v2): 1 if v1 < v2', t => {
   t.is(rcompare('1.1.1.Final', '1.1.2'), 1);
   t.is(rcompare('1.1.0.1-GA', '1.1.2.beta'), 1);
   t.is(rcompare('1.1.1.RELEASE', '1.1.2'), 1);
+  t.is(rcompare('1.1.1-jre', '1.1.2'), 1);
 });

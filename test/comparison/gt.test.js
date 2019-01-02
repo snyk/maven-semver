@@ -19,6 +19,7 @@ test('gt(v1, v2): v1 > v2', t => {
   t.truthy(gt('5.0.1-beta', '5.0.1-alpha'));
   t.truthy(gt('5.0.1', '5.0.1.beta'));
   t.truthy(gt('5.0.1.GA', '5.0.1.rc'));
+  t.truthy(gt('5.0.1-jre', '5.0.1.rc'));
 
   t.falsy(gt('2', '2'));
   t.falsy(gt('5.4', '5.4'));
@@ -28,6 +29,7 @@ test('gt(v1, v2): v1 > v2', t => {
   t.falsy(gt('5.0.1-beta.3', '5.0.1-beta.3'));
   t.falsy(gt('5.0.1-beta', '5.0.1-beta'));
   t.falsy(gt('5.0.1-ga', '5.0.1-ga'));
+  t.falsy(gt('5.0.1-jre', '5.0.1-ga'));
 
   t.falsy(gt('1', '2'));
   t.falsy(gt('5.3', '5.4'));
@@ -39,4 +41,6 @@ test('gt(v1, v2): v1 > v2', t => {
   t.falsy(gt('5.0.1.beta', '5.0.1'));
   t.falsy(gt('5.0.1-ga', '5.0.2'));
   t.falsy(gt('5.0.1-ga', '5.0.1-sec01'));
+  t.falsy(gt('5.0.1-jre', '5.0.2'));
+  t.falsy(gt('5.0.1-jre', '5.0.1-sec01'));
 });
