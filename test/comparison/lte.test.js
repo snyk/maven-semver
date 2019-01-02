@@ -10,8 +10,9 @@ test('lte(v1, v2): v1 <= v2', t => {
   t.truthy(lte('5.0.1.52.176', '5.0.1.52.200'));
   t.truthy(lte('5.0.1-beta.1', '5.0.1-beta.3'));
   t.truthy(lte('5.0.1-alpha', '5.0.1-beta'));
-  t.truthy(lte('5.0.1.beta', '5.0.1')); 
+  t.truthy(lte('5.0.1.beta', '5.0.1'));
   t.truthy(lte('5.0.1.GA', '5.0.2.beta'));
+  t.truthy(lte('5.0.1-jre', '5.0.2.beta'));
 
   t.truthy(lte('2', '2'));
   t.truthy(lte('5.4', '5.4'));
