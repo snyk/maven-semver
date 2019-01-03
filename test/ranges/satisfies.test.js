@@ -40,6 +40,7 @@ test('satisfies(version, range) - simple', t => {
   t.true(satisfies('1.2.3', '[1.2,)'));
   t.true(satisfies('1.2.3', '(,1.0],[1.2,)'));
   t.true(satisfies('0.9.0', '(,1.0],[1.2,)'));
+  t.true(satisfies('3.3.4', '[3.3.0,3.4.7), [3.5,3.5.1),'));
   t.false(satisfies('4.2.1', '[2.0.0,3)'));
   t.false(satisfies('1.0', '[1.1,)'));
   t.false(satisfies('1.2', '1.1'));
