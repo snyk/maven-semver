@@ -13,6 +13,7 @@ test('validRange(range)', t => {
   t.is(validRange('[1.5,)'), '[1.5,)');
   t.is(validRange('(,1.0],[1.2,)'), '(,1.0],[1.2,)');
   t.is(validRange('(,1.1),(1.1,)'), '(,1.1),(1.1,)');
+  t.is(validRange('(,1.1),(1.1,),'), '(,1.1),(1.1,)');
 
   t.is(validRange('[2,2.1.18]'), '[2,2.1.18]');
   t.is(validRange('[2.1.19,3)'), '[2.1.19,3)');

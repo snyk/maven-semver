@@ -374,6 +374,7 @@ test('validRange-2(range)', t => {
   t.not(validRange('(,2.3.0]'), null);
   t.not(validRange('(,2.11.0]'), null);
   t.not(validRange('[1.4,1.4.7], [1.5,1.5.4]'), null);
+  t.not(validRange('[1.4,1.4.7], [1.5,1.5.4],'), null);
   t.not(validRange('(,1.5.5]'), null);
   t.not(validRange('(,1.2.2]'), null);
 
