@@ -9,5 +9,8 @@
     "beforeOpeningRoundBrace": true
   },
   "excludeFiles": ["node_modules/**"],
-  "disallowSpacesInFunction": null
+  "disallowSpacesInFunction": null,
+  "maximumLineLength": {
+    "value": 100
+  }
 }
