@@ -26,5 +26,8 @@
   },
   "publishConfig": {
     "access": "restricted"
+  },
+  "dependencies": {
+    "combos": "^0.2.0"
   }
 }

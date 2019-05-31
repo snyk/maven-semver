@@ -5,10 +5,10 @@ import { gt } from '../../';
 test('gt(v1, v2): v1 > v2', t => {
   t.truthy(gt('2.0-SEC01', '2.0'));
   t.truthy(gt('2.0-SEC02', '2.0-SEC01'));
-  t.truthy(gt('2.0-SEC01', '2.0-ZORO'));
+  t.truthy(gt('2.0-ZORO', '2.0-SEC01'));
   t.truthy(gt('2.1-alpha', '2.0-SEC01'));
   t.truthy(gt('2.0-SECURITY01', '2.0'));
-  t.truthy(gt('2.0', '2.0-NOT-SEC01'));
+  t.truthy(gt('2.0-NOT-SEC01', '2.0'));
 
   t.truthy(gt('2', '1'));
   t.truthy(gt('5.4', '5.3'));
