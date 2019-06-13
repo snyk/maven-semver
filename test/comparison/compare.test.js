@@ -93,6 +93,9 @@ test('compare(v1, v2): -1 if v1 < v2', t => {
   t.is(compare('SomeRandomVersionOne', 'SOMERANDOMVERSIONTWO'), -1);
   t.is(compare('SomeRandomVersionThree', 'SOMERANDOMVERSIONTWO'), -1);
 
+  // float after special qualifier
+  t.is(compare('1.5-M2.1', '1.5'), -1);
+
 });
 
 test('sort with compare - edge cases', t => {
