@@ -50,7 +50,7 @@ test('satisfies(version, range) - simple', t => {
 
 test('satisfies(version, range) - alpha version', t => {
   t.true(satisfies('2.0.alpha', '[,2.0)'));
-  t.true(satisfies('1.0-alpha1', '[1-a1,2)'));
+  t.true(satisfies('1.0-alpha', '[1-a,2)'));
   t.true(satisfies('1.0-alpha', '[1-alpha,2)'));
   t.true(satisfies('1.0-alpha', '[1-alpha,1)'));
   t.true(satisfies('1.0-alpha', '[1-alpha,1]'));
@@ -63,13 +63,12 @@ test('satisfies(version, range) - alpha version', t => {
 });
 
 test('satisfies(version, range) - alpha, beta, milestone', t => {
-  t.true(satisfies('1-a', '[1,2)'));
-  t.true(satisfies('1-a', '(1,2)'));
+  t.true(satisfies('1.0', '[1-a,2)'));
   t.true(satisfies('1.milestone2', '[,1.milestone3]'));
   t.true(satisfies('1.milestone2', '[,1.milestone3)'));
-  t.true(satisfies('1.0-beta', '[1-a1,2)'));
-  t.true(satisfies('1.0-final', '[1,1-a]'));
-  t.false(satisfies('1.0-final', '(1,1-a]'));
+  t.true(satisfies('1.0-beta', '[1-a,2)'));
+  t.true(satisfies('1.0-beta', '[1-a,2)'));
+  t.true(satisfies('1.0-final', '[1-a,1]'));
   t.true(satisfies('4.3.0.alpha', '[4.1.0,4.3.0]'));
   t.true(satisfies('4.1.0.Final', '[4.1.0,4.3.0]'));
   t.true(satisfies('4.1.0-jre', '[4.1.0,4.3.0]'));
@@ -112,7 +111,7 @@ test('satisfies(version, range) - security', t => {
   t.true(satisfies('2.5', '[2.5,2.5.6.SEC02)'));
   t.true(satisfies('2.5.6.SEC01', '[2.5,2.5.6.SEC02)'));
   t.false(satisfies('2.5.6.SEC02', '[2.5,2.5.6.SEC02)'));
-  t.true(satisfies('2.5.6.SECURITY01', '[2.5,2.5.6.SEC02)'));
+  t.false(satisfies('2.5.6.SECURITY01', '[2.5,2.5.6.SEC02)'));
   t.false(satisfies('2.5-SNAPSHOT', '[2.5,2.5.6.SEC02)'));
   t.true(satisfies('2.5-SNAPSHOT', '[2.5-alpha,2.5.6.SEC02)'));
   t.true(satisfies('2.5.6-SNAPSHOT', '[2.5,2.5.6.SEC02)'));

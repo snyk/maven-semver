@@ -12,7 +12,7 @@ test('lt(v1, v2): v1 < v2', t => {
   t.truthy(lt('5.0.1-alpha', '5.0.1-beta'));
   t.truthy(lt('5.0.1.beta', '5.0.1'));
   t.truthy(lt('5.0.1.beta', '5.0.1.RELEASE'));
-  t.truthy(lt('5.0.1.RELEASE', '5.0.1.koko'));
+  t.truthy(lt('5.0.1.koko', '5.0.1.RELEASE'));
   t.truthy(lt('5.0.1', '5.0.2.Final'));
 
   t.falsy(lt('2', '2'));

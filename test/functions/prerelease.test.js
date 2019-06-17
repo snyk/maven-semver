@@ -7,9 +7,9 @@ import { prerelease } from '../../';
 
 test('prerelease(v)', t => {
   t.deepEqual(prerelease('1.2.3.alpha-1'), ['alpha', 1]);
-  t.deepEqual(prerelease('1.2.3.alpha.1-2'), ['alpha', 1, 2]);
+  t.deepEqual(prerelease('1.2.3.alpha.1-2'), ['alpha.1', 2]);
   t.deepEqual(prerelease('1.2.3-1'), [1]);
-  t.deepEqual(prerelease('1.2.3-1.2'), [1.2]);
+  t.deepEqual(prerelease('1.2.3-1.2'), ['1.2']);
 
   t.is(prerelease('1'), null);
   t.is(prerelease('1.2'), null);
