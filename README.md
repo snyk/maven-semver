@@ -17,10 +17,6 @@ and may help work around bugs in Maven's version parser. It compares as follows 
  * The minimum/singular version is more important than the maximum. `[2]` > `[1,3)`
  * Open-ended ranges are further out than any named version: `(,2)` < `(0.0.1,2)`, `[1,3)` < `[1,)`.
 
-### Further reading
- * https://octopus.com/blog/maven-versioning-explained
- * https://cwiki.apache.org/confluence/display/MAVENOLD/Versioning
-
 
 ### License
 

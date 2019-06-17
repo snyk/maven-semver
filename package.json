@@ -12,7 +12,6 @@
   "license": "Apache-2.0",
   "devDependencies": {
     "ava": "^0.23.0",
-    "combos": "^0.2.0",
     "jscs": "^3.0.7",
     "jshint": "^2.9.5",
     "nyc": "^13.3.0",
@@ -27,6 +26,5 @@
   },
   "publishConfig": {
     "access": "restricted"
-  },
-  "dependencies": {}
+  }
 }
