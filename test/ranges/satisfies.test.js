@@ -73,12 +73,15 @@ test('satisfies(version, range) - alpha, beta, milestone', t => {
   t.true(satisfies('4.3.0.alpha', '[4.1.0,4.3.0]'));
   t.true(satisfies('4.1.0.Final', '[4.1.0,4.3.0]'));
   t.true(satisfies('4.1.0-jre', '[4.1.0,4.3.0]'));
+  t.true(satisfies('4.1.0-jre', '(4.1.0,4.3.0]'));
+
 
   t.false(satisfies('0.9', '[1-a,2)'));
   t.false(satisfies('2.beta', '[,2.beta)'));
   t.false(satisfies('1.0-final', '[1-a,1)'));
   t.false(satisfies('4.1.0.beta', '[4.1.0,4.3.0]'));
   t.false(satisfies('1.milestone2', '[,1.milestone1]'));
+  t.false(satisfies('4.3.0-jre', '[4.1.0,4.3.0]'));
 });
 
 test('satisfies(version, range) - final, release', t => {
@@ -92,7 +95,6 @@ test('satisfies(version, range) - final, release', t => {
   t.true(satisfies('4.3.0.GA', '[4.1.0,4.3.0]'));
   t.true(satisfies('4.3.0.Final', '[4.1.0,4.3.0]'));
   t.true(satisfies('4.3.0.RELEASE', '[4.1.0,4.3.0]'));
-  t.true(satisfies('4.3.0-jre', '[4.1.0,4.3.0]'));
   t.false(satisfies(
     '4.2.1',
     '[2.0.0,3),[3.0.0.RELEASE,3.1),[3.1.0.RELEASE,3.2)'));

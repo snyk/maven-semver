@@ -30,7 +30,6 @@ test('eq(a, b) === true', t => {
   t.true(eq('5.0.1-beta', '5.0.1.beta'));
   t.true(eq('5.0.1.Final', '5.0.1'));
   t.true(eq('5.0.1.1-GA', '5.0.1.1'));
-  t.true(eq('5.0.1.1-jre', '5.0.1.1'));
 });
 
 test('eq(a, b) !== true', t => {
@@ -44,4 +43,5 @@ test('eq(a, b) !== true', t => {
   t.false(eq('5.0.1.Final', '5.0.1.a'));
   t.false(eq('5.0.1.1-GA', '5.0.1-a'));
   t.false(eq('5.0.1', '5.0.1.a'));
+  t.false(eq('5.0.1.1-jre', '5.0.1.1'));
 });
