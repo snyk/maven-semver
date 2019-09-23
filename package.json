@@ -11,19 +11,19 @@
   "author": "Dror Ben-Gai <dror@snyk.io>",
   "license": "Apache-2.0",
   "devDependencies": {
-    "ava": "^0.23.0",
+    "ava": "^2.4.0",
     "combos": "^0.2.0",
     "jscs": "^3.0.7",
-    "jshint": "^2.9.5",
-    "nyc": "^13.3.0",
-    "semantic-release": "^8.2.0"
+    "jshint": "^2.10.2",
+    "nyc": "^14.1.1",
+    "semantic-release": "^15.13.24"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/snyk/maven-semver"
   },
   "engines": {
-    "node": ">=6"
+    "node": ">=8"
   },
   "publishConfig": {
     "access": "restricted"
