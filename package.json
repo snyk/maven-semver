@@ -3,7 +3,7 @@
   "description": "A semantic version parser for maven, based on the API of npm's semver",
   "main": "index.js",
   "scripts": {
-    "lint": "jscs lib/*.js && jshint lib/*.js",
+    "lint": "eslint lib test",
     "test": "npm run lint && ava --verbose",
     "coverage": "nyc ava --verbose",
     "semantic-release": "npx semantic-release@15"
@@ -13,8 +13,7 @@
   "devDependencies": {
     "ava": "^2.4.0",
     "combos": "^0.2.0",
-    "jscs": "^3.0.7",
-    "jshint": "^2.10.2",
+    "eslint": "^6.6.0",
     "nyc": "^14.1.1"
   },
   "repository": {
