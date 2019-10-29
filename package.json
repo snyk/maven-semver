@@ -6,7 +6,7 @@
     "lint": "jscs lib/*.js && jshint lib/*.js",
     "test": "npm run lint && ava --verbose",
     "coverage": "nyc ava --verbose",
-    "semantic-release": "semantic-release"
+    "semantic-release": "npx semantic-release@15"
   },
   "author": "Dror Ben-Gai <dror@snyk.io>",
   "license": "Apache-2.0",
@@ -15,8 +15,7 @@
     "combos": "^0.2.0",
     "jscs": "^3.0.7",
     "jshint": "^2.10.2",
-    "nyc": "^14.1.1",
-    "semantic-release": "^15.13.24"
+    "nyc": "^14.1.1"
   },
   "repository": {
     "type": "git",
