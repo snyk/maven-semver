@@ -72,6 +72,7 @@ test('compare(v1, v2): 1 if v1 > v2', t => {
   t.is(compare('1.1.0.1-GA', '1.1.0.beta'), 1);
   t.is(compare('1.1.1.RELEASE', '1.1.0'), 1);
   t.is(compare('1.1.0-jre', '1.1.0'), 1);
+  t.is(compare('1.0-10', '1.0-9'), 1);
 });
 
 test('compare(v1, v2): -1 if v1 < v2', t => {
@@ -85,6 +86,7 @@ test('compare(v1, v2): -1 if v1 < v2', t => {
   t.is(compare('1.1.0.1-GA', '1.1.2.beta'), -1);
   t.is(compare('1.1.1.RELEASE', '1.1.2'), -1);
   t.is(compare('1.1.1-jre', '1.1.2'), -1);
+  t.is(compare('1.0-9', '1.0-10'), -1);
 
   // alpha1 == a1, alpha < a
   t.is(compare('1.1.0.1-alpha', '1.1.0.1-a'), -1);
@@ -94,7 +96,6 @@ test('compare(v1, v2): -1 if v1 < v2', t => {
 
   // float after special qualifier
   t.is(compare('1.5-M2.1', '1.5'), -1);
-
 });
 
 test('sort with compare - edge cases', t => {
