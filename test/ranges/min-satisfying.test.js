@@ -6,7 +6,7 @@ import { minSatisfying } from '../../';
 // satisfies the range, or null if none of them do.
 
 test('minSatisfying(versions, range)', t => {
-  t.is(minSatisfying(['1.2.3', '1.2.4'], '(1.2,]'), '1.2.3');
+  t.is(minSatisfying(['1.2.3', '1.2.4'], '(1.2,]'), '1.2.4');
   t.is(minSatisfying(['1.2.4', '1.2.3', '1.1'], '[1.2,1.3)'), '1.2.3');
   t.is(minSatisfying(['1.2.3', '1.2.4', '1.2.5'], '(1.2.3,1.2.4]'), '1.2.4');
   t.is(minSatisfying(['1.2.3', '1.2.4', '1.2.5', '1.2.2'], '[1.2.3,)'),
