@@ -58,7 +58,7 @@ workflows:
           context: nodejs-install
           matrix:
             parameters:
-              node-version: ["8.17.0", "10.24.1", "12.22.1", "14.16.1"]
+              node-version: ["10.24.1", "12.22.1", "14.16.1", "16.1.0"]
           filters:
             branches:
               ignore:
