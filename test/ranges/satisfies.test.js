@@ -3,6 +3,14 @@ import test from 'ava';
 import { satisfies } from '../../';
 
 // satisfies(version, range): Return true if the version satisfies the range.
+test('satisfies(version, range) - falsy input', t => {
+  t.false(satisfies('', '(,)'));
+  t.false(satisfies(undefined, '(,)'));
+  t.false(satisfies(null, '(,)'));
+  t.false(satisfies('1', ''));
+  t.false(satisfies('1', undefined));
+  t.false(satisfies('1', null));
+})
 
 test('satisfies(version, range) - unbounded range', t => {
   t.true(satisfies('0', '(,)'));
@@ -118,4 +126,13 @@ test('satisfies(version, range) - security', t => {
   t.false(satisfies('2.5-SNAPSHOT', '[2.5,2.5.6.SEC02)'));
   t.true(satisfies('2.5-SNAPSHOT', '[2.5-alpha,2.5.6.SEC02)'));
   t.true(satisfies('2.5.6-SNAPSHOT', '[2.5,2.5.6.SEC02)'));
+});
+
+test('satisfies(version, range) - with dynamic revisions', t => {
+  t.false(satisfies('9', '[10.+,)'));
+  t.true(satisfies('10', '[10.+,)'));
+  t.true(satisfies('10.1', '[10.+,)'));
+  t.true(satisfies('11', '[10.+,)'));
+  t.false(satisfies('10.0', '[10.1.+,)'));
+  t.true(satisfies('10.1', '[10.1.+,)'));
 });
