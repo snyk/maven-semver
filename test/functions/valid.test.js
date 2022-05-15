@@ -9,6 +9,7 @@ test('valid(v)', t => {
   t.is(valid(''), '');
   t.is(valid('.'), '');
   t.is(valid('.-.'), '');
+  t.is(valid('unknown'), '');
 
   t.is(valid('nonsense'), 'nonsense');
 

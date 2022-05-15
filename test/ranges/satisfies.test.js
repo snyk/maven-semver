@@ -136,3 +136,15 @@ test('satisfies(version, range) - with dynamic revisions', t => {
   t.false(satisfies('10.0', '[10.1.+,)'));
   t.true(satisfies('10.1', '[10.1.+,)'));
 });
+
+test('satisfies(version, range) - with unknown', t => {
+  t.false(satisfies('unknown', '[1,)'));
+  t.false(satisfies('unknown', '[10.+,)'));
+  t.false(satisfies('unknown', '[,2]'));
+  t.false(satisfies('unknown', '1.1'));
+  t.false(satisfies('unknown', '(,)'));
+  t.false(satisfies('unknown', '[,]'));
+  t.false(satisfies('unknown', 'nonsense'));
+  t.false(satisfies('unknown', undefined));
+  t.false(satisfies('unknown', null));
+});
