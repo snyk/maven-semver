@@ -31,4 +31,5 @@ test('lt(v1, v2): v1 < v2', t => {
   t.falsy(lt('5.0.1-beta.3', '5.0.1-beta.1'));
   t.falsy(lt('5.0.1-beta', '5.0.1-alpha'));
   t.falsy(lt('5.0.1', '5.0.1.rc2'));
+  t.falsy(lt('1.0', '1.0-20050927.133100'));
 });

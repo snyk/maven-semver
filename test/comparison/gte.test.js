@@ -35,4 +35,5 @@ test('gte(v1, v2): v1 >= v2', t => {
   t.falsy(gte('5.0.1.beta', '5.0.1'));
   t.falsy(gte('5.3.GA', '5.4'));
   t.falsy(gte('5.3-jre', '5.4'));
+  t.falsy(gte('1.0-20050927.133100', '1.0'));
 });
