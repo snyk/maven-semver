@@ -20,6 +20,7 @@ and may help work around bugs in Maven's version parser. It compares as follows 
 ### Further reading
  * https://octopus.com/blog/maven-versioning-explained
  * https://cwiki.apache.org/confluence/display/MAVENOLD/Versioning
+ * https://maven.apache.org/pom.html#version-order-testing
 
 
 ### License
