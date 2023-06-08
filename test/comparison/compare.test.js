@@ -12,6 +12,7 @@ import { compare } from '../../';
 // additional test cases
 
 test('compare(v1, v2): 0 if v1 == v2', t => {
+  t.is(compare('0.0.0-2022-07-26T05-45-04-226aabd9', '0.0.0-2022-07-26T05-45-04-226aabd9'), 0);
   t.is(compare('1', '1'), 0);
   t.is(compare('1.1', '1.1'), 0);
   t.is(compare('1.1.0', '1.1.0'), 0);
@@ -61,6 +62,7 @@ test('compare(v1, v2): 0 if v1 == v2', t => {
 });
 
 test('compare(v1, v2): 1 if v1 > v2', t => {
+  t.is(compare('0.0.0-2022-10-29T03-41-04-bb4a3b2b', '0.0.0-2022-07-26T05-45-04-226aabd9'), 1);
   t.is(compare('2', '1'), 1);
   t.is(compare('1.2', '1.1'), 1);
   t.is(compare('1.1.1', '1.1.0'), 1);
@@ -75,6 +77,7 @@ test('compare(v1, v2): 1 if v1 > v2', t => {
 });
 
 test('compare(v1, v2): -1 if v1 < v2', t => {
+  t.is(compare('0.0.0-2022-07-26T05-45-04-226aabd9', '0.0.0-2022-10-29T03-41-04-bb4a3b2b'), -1);
   t.is(compare('1', '2'), -1);
   t.is(compare('1.1', '1.2'), -1);
   t.is(compare('1.1.0', '1.1.1'), -1);
