@@ -9,6 +9,7 @@ test('patch(v)', t => {
   t.is(patch('1beta'), 0);
   t.is(patch('1beta1'), 0);
   t.is(patch('1.2alpha'), 0);
+  t.is(patch('0.0.0-2022-07-26T05-45-04-226aabd9'), 0);
   t.is(patch('1.2ga'), 0);
   t.is(patch('1.2.3'), 3);
   t.is(patch('1.2.3.4'), 3);
