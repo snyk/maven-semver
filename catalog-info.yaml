@@ -7,16 +7,17 @@ metadata:
     - maven
   links:
     - icon: message
-      title: "Team Asks Channel"
-      url: "https://snyk.slack.com/channels/team-tardis"
+      title: Team Asks Channel
+      url: https://snyk.slack.com/channels/team-tardis
   annotations:
     github.com/project-slug: snyk/maven-semver
     circleci.com/project-slug: github/snyk/maven-semver
+    github.com/team-slug: snyk/os-managed
   labels:
     snyk.io/businessCriticality: medium
     snyk.io/visibility: private
     snyk.io/metadata-version: "2021-16-05"
 spec:
-  type: library
-  lifecycle: production
-  owner: tardis
+  type: internal-library
+  lifecycle: "-"
+  owner: os-managed
