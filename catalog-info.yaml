@@ -16,7 +16,7 @@ metadata:
   labels:
     snyk.io/businessCriticality: medium
     snyk.io/visibility: private
-    snyk.io/metadata-version: 2021-16-05
+    snyk.io/metadata-version: "2021-16-05"
 spec:
   type: internal-library
   lifecycle: "-"
