@@ -16,4 +16,5 @@ test('major(v)', t => {
   t.is(major('.1'), 0);
   t.is(major('.1.1'), 0);
   t.is(major('FINAL'), 0);
+  t.is(major('v1'), 1);
 });

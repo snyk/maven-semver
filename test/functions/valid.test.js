@@ -43,4 +43,9 @@ test('valid(v)', t => {
   t.is(valid('1.2ga34-4'), '1.2-34-4');
 
   t.is(valid('1.2FiNaL34BEtA4'), '1.2-34-beta-4');
+
+  t.is(valid('v1'), '1');
+  t.is(valid('v1.1'), '1.1');
+  t.is(valid('v1.1.2'), '1.1.2');
+  t.is(valid('v1.1.2.3'), '1.1.2.3');
 });

@@ -56,6 +56,24 @@ test('satisfies(version, range) - simple', t => {
   t.false(satisfies('1.1.8', '(,1.0],[1.2,)'));
 });
 
+test('satisfies(version, range) - simple with leading v', t => {
+  t.true(satisfies('v1.1', '[1.1,)'));
+  t.false(satisfies('v1.1.5', '1.1.2'));
+  t.false(satisfies('v1.1.5', '[1.1.2]'));
+  t.true(satisfies('v1.1.5', '1.1.5'));
+  t.true(satisfies('v1.4.11', '[1.3,1.5)'));
+  t.true(satisfies('v1.2.3', '[1.2,)'));
+  t.true(satisfies('v1.2.3', '(,1.0],[1.2,)'));
+  t.true(satisfies('v0.9.0', '(,1.0],[1.2,)'));
+  t.true(satisfies('v3.3.4', '[3.3.0,3.4.7), [3.5,3.5.1),'));
+  t.false(satisfies('v4.2.1', '[2.0.0,3)'));
+  t.false(satisfies('v1.0', '[1.1,)'));
+  t.false(satisfies('v1.2', '1.1'));
+  t.false(satisfies('v1.5.2', '[1.3,1.5)'));
+  t.false(satisfies('v1.1.8', '(,1.0],[1.2,)'));
+});
+
+
 test('satisfies(version, range) - alpha version', t => {
   t.true(satisfies('2.0.alpha', '[,2.0)'));
   t.true(satisfies('1.0-alpha1', '[1-a1,2)'));

@@ -17,4 +17,5 @@ test('patch(v)', t => {
   t.is(patch('1.2.3-123'), 3);
   t.is(patch('1.2.3.alpha.4'), 3);
   t.is(patch('1.2.3.RELEASE.4'), 3);
+  t.is(patch('v1.2.3'), 3);
 });

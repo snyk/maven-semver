@@ -54,6 +54,8 @@ test('prerelease(v)', t => {
   t.deepEqual(prerelease('1.2.3-rc'), ['rc']);
   t.deepEqual(prerelease('1.2.3-rc5'), ['rc', 5]);
   t.deepEqual(prerelease('1.2.3-rc.5'), ['rc', 5]);
+  t.deepEqual(prerelease('v1.2.3-rc5'), ['rc', 5]);
+  t.deepEqual(prerelease('1.2.3-RC5'), ['rc', 5]);
   t.deepEqual(prerelease('1.2.3-cr'), null);
   t.deepEqual(prerelease('1.2.3-cr.9'), ['cr', 9]);
 

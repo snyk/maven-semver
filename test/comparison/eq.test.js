@@ -30,6 +30,10 @@ test('eq(a, b) === true', t => {
   t.true(eq('5.0.1-beta', '5.0.1.beta'));
   t.true(eq('5.0.1.Final', '5.0.1'));
   t.true(eq('5.0.1.1-GA', '5.0.1.1'));
+  t.true(eq('v2', '2'));
+  t.true(eq('v2.0', '2.0'));
+  t.true(eq('v2.0.0', '2.0.0'));
+  t.true(eq('v2.0.0.0', '2.0.0.0'));
 });
 
 test('eq(a, b) !== true', t => {
