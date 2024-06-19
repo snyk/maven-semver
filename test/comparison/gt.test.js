@@ -16,6 +16,7 @@ test('gt(v1, v2): v1 > v2', t => {
   t.truthy(gt('5.0.1.52', '5.0.1.34'));
   t.truthy(gt('5.0.1.52.200', '5.0.1.52.176'));
   t.truthy(gt('5.0.1-beta.3', '5.0.1-beta.1'));
+  t.truthy(gt('1.12.0-alpha11', '1.12.0-alpha9'));
   t.truthy(gt('5.0.1-beta', '5.0.1-alpha'));
   t.truthy(gt('5.0.1', '5.0.1.beta'));
   t.truthy(gt('5.0.1.GA', '5.0.1.rc'));

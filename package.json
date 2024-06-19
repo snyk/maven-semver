@@ -20,11 +20,7 @@
     "type": "git",
     "url": "https://github.com/snyk/maven-semver"
   },
-  "engines": {
-    "node": ">=8"
-  },
   "publishConfig": {
     "access": "restricted"
-  },
-  "dependencies": {}
+  }
 }
