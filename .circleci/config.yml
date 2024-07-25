@@ -43,7 +43,7 @@ jobs:
       - install
       - prodsec/security_scans:
           mode: auto
-          release-branch: master
+          release-branch: main
           open-source-additional-arguments: --exclude=test
           iac-scan: disabled
 
@@ -81,10 +81,10 @@ workflows:
           filters:
             branches:
               ignore:
-                - master
+                - main
       - security-scans:
           name: Security Scans
-          node-version: "16.1.0"
+          node-version: "22.5.1"
           context:
             - open_source-managed
             - nodejs-install
@@ -92,18 +92,16 @@ workflows:
           name: Test Node << matrix.node-version >>
           context: nodejs-install
           matrix:
+            alias: test
             parameters:
-              node-version: ["10.24.1", "12.22.1", "14.16.1", "16.1.0"]
+              node-version: ["20.16.0", "22.5.1"]
       - release:
           name: Release
           requires:
             - Scan repository for secrets
-            - Test Node 10.24.1
-            - Test Node 12.22.1
-            - Test Node 14.16.1
-            - Test Node 16.1.0
+            - test
           context: nodejs-lib-release
           filters:
             branches:
               only:
-                - master
+                - main
