@@ -7,8 +7,9 @@ jobs:
   update-node-deps:
     uses: snyk/engprod-actions/.github/workflows/update-node-deps.yml@v1
     with:
+      # ava: Packages that have become ESM-only and won't work anymore for us, until we do the same.
       # eslint: Causes conflicts with typescript packages that depend on lower versions. Remove to see if it was fixed upstream.
-      packages-to-ignore: 'eslint'
+      packages-to-ignore: 'ava,eslint'
     secrets:
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       GPG_PRIVATE_KEY: ${{ secrets.GA_GPG_PRIVATE_KEY }}
