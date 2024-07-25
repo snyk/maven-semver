@@ -11,10 +11,13 @@
   "author": "Dror Ben-Gai <dror@snyk.io>",
   "license": "Apache-2.0",
   "devDependencies": {
+    "@eslint/eslintrc": "^3.1.0",
+    "@eslint/js": "^9.7.0",
     "ava": "^2.4.0",
     "combos": "^0.2.0",
-    "eslint": "^6.6.0",
-    "nyc": "^14.1.1"
+    "eslint": "^9.7.0",
+    "globals": "^15.8.0",
+    "nyc": "^17.0.0"
   },
   "repository": {
     "type": "git",
