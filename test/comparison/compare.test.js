@@ -130,3 +130,29 @@ test('sort with compare - edge cases', t => {
   sortedArray.sort(compare);
   t.deepEqual(sortedArray, VERSIONS);
 });
+
+test("timestamp versions comparison", (t) => {
+  t.is(compare("1", "20190203040506"), 1);
+  t.is(compare("20190203040506", "1"), -1);
+
+  t.is(compare("1", "201902030405"), 1);
+  t.is(compare("201902030405", "1"), -1);
+
+  t.is(compare("1", "2019020304"), 1);
+  t.is(compare("2019020304", "1"), -1);
+
+  t.is(compare("1", "20190203"), 1);
+  t.is(compare("20190203", "1"), -1);
+
+  t.is(compare("20190203040506", "20190203"), 1);
+  t.is(compare("20190203000000", "20190203"), 0);
+  t.is(compare("20190203", "20190203040506"), -1);
+
+  t.is(compare("201902030405", "20190203"), 1);
+  t.is(compare("201902030000", "20190203"), 0);
+  t.is(compare("20190203", "201902030405"), -1);
+
+  t.is(compare("2019020304", "20190203"), 1);
+  t.is(compare("2019020300", "20190203"), 0);
+  t.is(compare("20190203", "2019020304"), -1);
+});
