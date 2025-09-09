@@ -102,6 +102,7 @@ test('compare(v1, v2): -1 if v1 < v2', t => {
 
 test('sort with compare - edge cases', t => {
   const VERSIONS = [
+    "SomeRandomVersionOne",
     "1.0-alpha",
     // "1.0a1-SNAPSHOT",  FIXME: we don't recurse on qualifiers
     "1.0-alpha1",
