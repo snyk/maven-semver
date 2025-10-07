@@ -26,3 +26,5 @@ and may help work around bugs in Maven's version parser. It compares as follows 
 ### License
 
 [License: Apache License, Version 2.0](LICENSE)
+
+**This repository is closed to public contributions.**
