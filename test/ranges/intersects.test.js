@@ -31,5 +31,10 @@ test('intersects(range1, range2)', t => {
   t.false(intersects('(,1)', '(2,)'), 'open bounds not intersecting');
   t.true(intersects('(2, 3]', '(0.1,2],[3,4)'), 'intersect multiple boundaries right');
   t.true(intersects('(1, 5], [7, 9]', '(6, 7]'), 'intersect multiple boundaries left');
-  t.false(intersects('(1, 5], [7, 9]', '(6, 7), (9, 10]'), 'no intersect with multiple boundaries');  
+  t.false(intersects('(1, 5], [7, 9]', '(6, 7), (9, 10]'), 'no intersect with multiple boundaries');
+  t.false(intersects('[0.0.0, 1.0.0)', '[2.0.0, )'), 'no intersect when open bounded');
+  t.true(intersects('[2.0.0, )', '[1.0.0, 3.0.0]'), 'open bounded intersects containing range');
+  t.false(intersects('[1.0.0, )', '[0.0.0, 1.0.0)'), 'open bounded touches exclusive upper bound');
+  t.false(intersects('[, 1.0.0)', '[2.0.0, )'), 'no intersect when first and second open bounded');
+  t.true(intersects('[, 2.0.0)', '[1.0.0, )'), 'intersect when first and second open bounded');
 });
