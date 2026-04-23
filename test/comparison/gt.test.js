@@ -23,6 +23,13 @@ test('gt(v1, v2): v1 > v2', t => {
   t.truthy(gt('5.0.1-jre', '5.0.1.rc'));
   t.truthy(gt('5.0.1-jre', '5.0.1-ga'));
 
+  // NuGet preview support
+  t.truthy(gt('8.0.0', '8.0.0-preview'));
+  t.truthy(gt('8.0.0', '8.0.0-preview.1'));
+  t.truthy(gt('8.0.0-preview', '8.0.0-alpha'));
+  t.truthy(gt('8.0.0-preview', '8.0.0-beta'));
+  t.truthy(gt('8.0.0-preview.2', '8.0.0-preview.1'));
+
   t.falsy(gt('2', '2'));
   t.falsy(gt('5.4', '5.4'));
   t.falsy(gt('5.0.1', '5.0.1'));
@@ -44,4 +51,11 @@ test('gt(v1, v2): v1 > v2', t => {
   t.falsy(gt('5.0.1-ga', '5.0.1-sec01'));
   t.falsy(gt('5.0.1-jre', '5.0.2'));
   t.truthy(gt('5.0.1-jre', '5.0.1-sec01'));
+
+  // NuGet preview - falsy cases
+  t.falsy(gt('8.0.0-preview', '8.0.0'));
+  t.falsy(gt('8.0.0-preview.1', '8.0.0'));
+  t.falsy(gt('8.0.0-alpha', '8.0.0-preview'));
+  t.falsy(gt('8.0.0-beta', '8.0.0-preview'));
+  t.falsy(gt('8.0.0-preview.1', '8.0.0-preview.2'));
 });
