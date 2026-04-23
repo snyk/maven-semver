@@ -148,3 +148,15 @@ test('satisfies(version, range) - with unknown', t => {
   t.false(satisfies('unknown', undefined));
   t.false(satisfies('unknown', null));
 });
+
+test('satisfies(version, range) - NuGet preview', t => {
+  const range = '[8.0.0-preview,8.0.1)';
+  
+  t.false(satisfies('7.0.0', range));
+  t.false(satisfies('8.0.0-alpha', range));
+  t.false(satisfies('8.0.0-beta', range));
+  t.true(satisfies('8.0.0-preview', range));
+  t.true(satisfies('8.0.0', range));
+  t.false(satisfies('8.0.1', range));
+  t.false(satisfies('8.0.2', range));
+});
